@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const AddTextRich());
+void main() => runApp(const AddImage());
 
 class AddText extends StatelessWidget {
   const AddText({super.key});
@@ -48,6 +48,34 @@ class AddTextRich extends StatelessWidget {
           )),
         ),
       ),
+    );
+  }
+}
+
+class AddImage extends StatelessWidget {
+  const AddImage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+          body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: ListView(
+          children: [
+            Image.network(
+                'https://cdn.shopify.com/s/files/1/1206/7410/articles/SQ-L-THEANINE-3_1024x1024.jpg?v=1504777245 '),
+            const SizedBox(height: 10),
+            const Image(
+                image: NetworkImage(
+                    'https://cdn.shopify.com/s/files/1/1206/7410/articles/SQ-L-THEANINE-3_1024x1024.jpg?v=1504777245 ')),
+            const SizedBox(height: 10),
+            Image.asset('assets/images/bg1.jpg'),
+            const SizedBox(height: 10),
+            const Image(image: AssetImage('assets/images/kiwi.jpg'))
+          ],
+        ),
+      )),
     );
   }
 }
